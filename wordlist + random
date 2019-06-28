@@ -1,12 +1,37 @@
-import re
 import random
+
+print ("begin met raden...")
 
 wordlist = ["informatica", "informatiekunde", "spelletje", "aardigheidje", "scholier", "fotografie", "waardebepaling", "specialiteit", "verzekering", "universiteit", "heesterperk"]
 
-hetwoord = random.choice(wordlist)
-lengtewoord = len(hetwoord)
-aantal = "_" * lengtewoord
+random.shuffle(wordlist)
+answer = list(wordlist[0])
+guesses = ''
+turns = 10
 
-print("Het woord heeft " + str(lengtewoord) + " letters")
-print("Je hebt 8 kansen")
-print ("begin met raden...")
+while turns > 0:         
+
+  failed = 0             
+  for char in answer:      
+      if char in guesses:    
+           print (char,)  
+
+      else:
+          print ("-"),     
+          failed += 1    
+
+  if failed == 0:        
+       print ("Je hebt gewonnen!")
+       break              
+
+  print
+
+  guess = input("raad een letter:") 
+  guesses += guess                    
+
+  if guess not in answer:  
+      turns -= 1        
+      print ("Fout geraden!")  
+      print ("Je hebt nog", + turns, "kansen")
+  if turns == 0:           
+      print ("Je hebt verloren")

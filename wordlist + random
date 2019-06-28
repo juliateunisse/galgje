@@ -1,11 +1,12 @@
+import re
 import random
-
-print ("begin met raden...")
 
 wordlist = ["informatica", "informatiekunde", "spelletje", "aardigheidje", "scholier", "fotografie", "waardebepaling", "specialiteit", "verzekering", "universiteit", "heesterperk"]
 
-random.shuffle(wordlist)
-answer = list(wordlist[0])
-guesses = ''
-turns = 10
-    
+hetwoord = random.choice(wordlist)
+lengtewoord = len(hetwoord)
+aantal = "_" * lengtewoord
+
+print("Het woord heeft " + str(lengtewoord) + " letters")
+print("Je hebt 8 kansen")
+print ("begin met raden...")

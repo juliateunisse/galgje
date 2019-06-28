@@ -1,0 +1,11 @@
+import random
+
+print ("begin met raden...")
+
+wordlist = ["informatica", "informatiekunde", "spelletje", "aardigheidje", "scholier", "fotografie", "waardebepaling", "specialiteit", "verzekering", "universiteit", "heesterperk"]
+
+random.shuffle(wordlist)
+answer = list(wordlist[0])
+guesses = ''
+turns = 10
+    
